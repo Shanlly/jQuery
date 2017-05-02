@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery </title>
+	<style>
+  p, div, span {
+    margin: 2px;
+    padding: 1px;
+  }
+  div {
+    border: 2px white solid;
+  }
+  span {
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .selected {
+    color: blue;
+  }
+  b {
+    color: red;
+    display: block;
+    font-size: 14px;
+  }
+  </style>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<h2>".parents([selector])"</h2>
+		<p>"Description: Get the ancestors of each element in the current set of matched elements, optionally filtered by a selector."
+		</p>
+	<p>
+ 		<div>
+    		<div>
+    			<span><h1>Hello</h1></span>
+    		</div>
+      			<span><h2>Hello Again</h2></span>
+   		</div>
+  		<div>
+				<span><h3>And Hello Again</h3></span>
+		</div>
+  	</p>
+  	<b>Click Hellos to toggle their parents.</b>
+	<div>
+		<pre>
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;parents&lt;/title&gt;
+  &lt;style&gt;
+  p, div, span {
+    margin: 2px;
+    padding: 1px;
+  }
+  div {
+    border: 2px white solid;
+  }
+  span {
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .selected {
+    color: blue;
+  }
+  b {
+    color: red;
+    display: block;
+    font-size: 14px;
+  }
+  &lt;/style&gt;
+  &lt;script src="https://code.jquery.com/jquery-1.10.2.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt; 
+&lt;script&gt;
+function showParents() {
+  $( "div" ).css( "border-color", "white" );
+  var len = $( "span.selected" )
+    .parents( "div" )
+      .css( "border", "2px red solid" )
+      .length;
+  $( "b" ).text( "Unique div parents: " + len );
+}
+$( "span" ).click(function() {
+  $( this ).toggleClass( "selected" );
+  showParents();
+});
+&lt;/script&gt;
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+
+		</pre>
+	</div>
+	<div>
+  		<h2><a href="http://api.jquery.com/prev/" target="_blank" alt="jquery .prev() page">".prev([selector])"
+  			</a>
+  		</h2>
+  			<p>Get the immediately preceding sibling of each element in the set of matched elements. If a selector is provided, it retrieves the previous sibling only if it matches that selector.
+  			</p>
+  			
+  	</div>
+  	<div>
+  		<h2><a href="http://api.jquery.com/next/" target="_blank" style="text-align:center" 	alt="jquery .next() page">".next([selector])" 
+  			</a>
+  		</h2>
+  			<p>" Get the immediately following sibling of each element in the set of matched elements. If a selector is provided, it retrieves the next sibling only if it matches that selector."
+  			</p>
+  			
+  	</div>
+ 
+	<script>
+function showParents() {
+  $( "div" ).css( "border-color", "white" );
+  var len = $( "span.selected" )
+    .parents( "div" )
+      .css( "border", "2px red solid" )
+      .length;
+  $( "b" ).text( "Unique div parents: " + len );
+}
+$( "span" ).click(function() {
+  $( this ).toggleClass( "selected" );
+  showParents();
+});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
